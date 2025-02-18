@@ -74,7 +74,7 @@ class RevenueManagementProblem(BaseProblem):
             return -1e9  # Heavy penalty for infeasibility
 
         # Set the seed for reproducibility.
-        random.seed(self.seed)
+        #random.seed(self.seed)
         sum_profit = 0.0
 
         for _ in range(self.nb_simulations):
