@@ -48,7 +48,7 @@ class RevenueManagementProblem(BaseProblem):
         self.prices = [100, 300, 400]
         self.mean_demands = [50, 20, 30]
         self.purchase_price = 80
-        self.nb_simulations = int(1e6)  # Number of Monte Carlo simulations
+        self.nb_simulations = int(1e2)  # Number of Monte Carlo simulations
         self.seed = seed
         # (For reference, a previously evaluated point is [100, 50, 30] with value 4740.99)
 
