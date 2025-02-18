@@ -1,0 +1,41 @@
+{
+    "entry_point": "revenue_management_problem:RevenueManagementProblem",
+    "default_params": {
+      "seed": 1
+    },
+    "problem_type": "Revenue Management",
+    "description": "A businessman must decide how many units to purchase and how many to reserve for later periods in order to maximize revenue over a 3-period horizon. The simulation uses Monte Carlo methods (with 1,000,000 iterations) to estimate mean revenue based on stochastic demand. The objective is to maximize mean revenue, computed as the sales revenue minus the purchase cost. Feasibility requires that the reserved amounts are nonincreasing over time.",
+    "keywords": [
+      "revenue management",
+      "simulation",
+      "monte carlo",
+      "stochastic",
+      "optimization"
+    ],
+    "data_format": {
+      "decision_variables": {
+        "type": "list of int",
+        "description": "A list of three integers in [0, 100]: [purchase quantity, reserved for period 2, reserved for period 3]. Must satisfy: reserved_period2 ≤ purchase and reserved_period3 ≤ reserved_period2."
+      }
+    },
+    "objective": {
+      "type": "maximization",
+      "function": "Mean Revenue = (Simulated sales revenue) - (purchase_price * purchase quantity)",
+      "description": "Maximize the mean revenue estimated via Monte Carlo simulation, where revenue is computed from period-specific prices and simulated demand, and a purchase cost is subtracted."
+    },
+    "solution_representation": "A list of three integers representing the initial purchase quantity and the reserved quantities for later periods.",
+    "compatible_optimizers": [
+      "genetic_algorithm",
+      "simulated_annealing",
+      "particle_swarm",
+      "tabu_search",
+      "rl_optimizer"
+    ],
+    "warm_start_points": [
+      {
+        "point": [100, 50, 30],
+        "value": 4740.99
+      }
+    ]
+  }
+  
